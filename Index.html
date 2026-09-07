@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ZPHS RAVUTLA | Class 10 Biology | Digestive Enzyme Challenge</title>
+
+<meta name="description"
+content="Interactive Class 10 SCERT Biology activity on Human Digestive System and Digestive Enzymes by ZPHS RAVUTLA">
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #e8f5e9);
+    color: #17324d;
+}
+
+/* MAIN CONTAINER */
+
+.container {
+    max-width: 950px;
+    margin: auto;
+    padding: 18px;
+}
+
+/* HEADER */
+
+.header {
+    background: linear-gradient(135deg, #0d47a1, #2e7d32);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 22px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+}
+
+.school {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-size: 17px;
+    margin-top: 8px;
+}
+
+.topic {
+    font-size: 25px;
+    margin-top: 18px;
+    font-weight: bold;
+}
+
+/* STUDENT NAME */
+
+.name-box {
+    background: white;
+    padding: 20px;
+    margin-top: 18px;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.10);
+}
+
+.name-box label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.name-box input {
+    width: 100%;
+    padding: 13px;
+    font-size: 16px;
+    border: 2px solid #d5e2ee;
+    border-radius: 10px;
+}
+
+/* CARD */
+
+.card {
+    background: white;
+    padding: 24px;
+    margin-top: 18px;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.10);
+}
+
+/* SCORE */
+
+.score {
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+/* PROGRESS */
+
+.progress {
+    height: 12px;
+    background: #e0e0e0;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 12px 0 20px;
+}
+
+.bar {
+    height: 100%;
+    width: 0%;
+    background: #2e7d32;
+    transition: 0.4s;
+}
+
+/* SCENARIO */
+
+.scenario {
+    background: #f5f9ff;
+    border-left: 6px solid #1565c0;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.scenario h2 {
+    color: #1565c0;
+    margin-top: 0;
+}
+
+.question {
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+/* OPTIONS */
+
+.options {
+    display: grid;
+    gap: 12px;
+}
+
+.option {
+    width: 100%;
+    border: 2px solid #d7e3ef;
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    text-align: left;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.option:hover {
+    background: #eef6ff;
+    border-color: #1565c0;
+}
+
+.option:disabled {
+    cursor: default;
+}
+
+.correct {
+    background: #e8f5e9 !important;
+    border-color: #2e7d32 !important;
+}
+
+.wrong {
+    background: #ffebee !important;
+    border-color: #c62828 !important;
+}
+
+/* FEEDBACK */
+
+.feedback {
+    display: none;
+    margin-top: 18px;
+    padding: 16px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.feedback.good {
+    display: block;
+    background: #e8f5e9;
+    color: #1b5e20;
+}
+
+.feedback.bad {
+    display: block;
+    background: #ffebee;
+    color: #b71c1c;
+}
+
+.explanation {
+    margin-top: 10px;
+    padding: 12px;
+    background: #fff8e1;
+    border-radius: 10px;
+    color: #6d4c00;
+    font-weight: normal;
+}
+
+/* BUTTONS */
+
+.start-btn,
+.next-btn,
+.restart-btn {
+    border: none;
+    border-radius: 12px;
+    padding: 15px 25px;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.start-btn {
+    background: #2e7d32;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.next-btn {
+    display: none;
+    background: #1565c0;
+    width: 100%;
+    margin-top: 18px;
+}
+
+.restart-btn {
+    background: #2e7d32;
+}
+
+/* MEMORY MAP */
+
+.memory h2 {
+    color: #1565c0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background: #e8f5e9;
+}
+
+/* RESULT */
+
+.result {
+    text-align: center;
+}
+
+.result-icon {
+    font-size: 60px;
+}
+
+.result h1 {
+    font-size: 50px;
+    color: #2e7d32;
+}
+
+.certificate {
+    background: #f5f9ff;
+    border: 2px dashed #1565c0;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.footer {
+    text-align: center;
+    padding: 25px;
+    color: #52677a;
+    font-size: 14px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .school {
+        font-size: 22px;
+    }
+
+    .topic {
+        font-size: 21px;
+    }
+
+    .question {
+        font-size: 18px;
+    }
+
+    .option {
+        font-size: 16px;
+    }
+
+    .result h1 {
+        font-size: 40px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+<!-- ================= HEADER ================= -->
+
+<div class="header">
+
+<div class="school">
+🏫 ZPHS RAVUTLA
+</div>
+
+<div class="subtitle">
+Class 10 • SCERT Biology
+</div>
+
+<div class="topic">
+🧑‍🔬 HUMAN DIGESTIVE SYSTEM
+</div>
+
+<div class="subtitle">
+Digestive Enzyme – Scenario Challenge
+</div>
+
+</div>
+
+
+<!-- ================= STUDENT NAME ================= -->
+
+<div class="name-box">
+
+<label for="studentName">
+👨‍🎓 Student Name
+</label>
+
+<input
+type="text"
+id="studentName"
+placeholder="Enter your name">
+
+<button
+class="start-btn"
+onclick="startActivity()">
+
+🚀 START ACTIVITY
+
+</button>
+
+</div>
+
+
+<!-- ================= QUIZ ================= -->
+
+<div
+class="card"
+id="quizCard"
+style="display:none;">
+
+<div class="score">
+
+Score:
+<span id="score">0</span>
+/
+<span id="total">10</span>
+
+</div>
+
+
+<div class="progress">
+
+<div
+class="bar"
+id="bar">
+</div>
+
+</div>
+
+
+<div id="quiz"></div>
+
+</div>
+
+
+<!-- ================= MEMORY MAP ================= -->
+
+<div class="card memory">
+
+<h2>🧠 QUICK MEMORY MAP</h2>
+
+<table>
+
+<tr>
+<th>Place</th>
+<th>Enzyme / Substance</th>
+<th>Action</th>
+</tr>
+
+<tr>
+<td>👄 Mouth</td>
+<td>Salivary amylase</td>
+<td>Starts starch digestion</td>
+</tr>
+
+<tr>
+<td>🧪 Stomach</td>
+<td>Pepsin</td>
+<td>Digests proteins</td>
+</tr>
+
+<tr>
+<td>🧪 Stomach</td>
+<td>HCl</td>
+<td>Provides acidic medium</td>
+</tr>
+
+<tr>
+<td>🧬 Small intestine</td>
+<td>Pancreatic amylase</td>
+<td>Acts on starch</td>
+</tr>
+
+<tr>
+<td>🧬 Small intestine</td>
+<td>Trypsin</td>
+<td>Acts on proteins</td>
+</tr>
+
+<tr>
+<td>🧬 Small intestine</td>
+<td>Lipase</td>
+<td>Digests fats</td>
+</tr>
+
+<tr>
+<td>🧬 Small intestine</td>
+<td>Bile</td>
+<td>Emulsifies fats – NOT an enzyme</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<div class="footer">
+
+<strong>ZPHS RAVUTLA</strong><br>
+
+Class 10 SCERT Biology Interactive Learning Activity<br>
+
+Human Digestive System – Digestive Enzymes
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   QUESTION DATA
+===================================================== */
+
+const questions = [
+
+{
+scenario: "🍞 SCENARIO 1 – BREAKFAST",
+
+question:
+"Rahul eats a piece of bread. After chewing it for some time, it begins to taste slightly sweet. What is happening?",
+
+options: [
+"Protein is being digested",
+"Starch is being partially broken down",
+"Fat is being digested",
+"No digestion occurs"
+],
+
+answer: 1,
+
+explanation:
+"Bread contains starch. Salivary amylase in saliva starts breaking starch into simpler sugars."
+},
+
+
+{
+scenario: "👄 SCENARIO 2 – INSIDE THE MOUTH",
+
+question:
+"Which enzyme begins the digestion of starch in the mouth?",
+
+options: [
+"Pepsin",
+"Lipase",
+"Salivary amylase",
+"Trypsin"
+],
+
+answer: 2,
+
+explanation:
+"Salivary amylase is present in saliva and begins starch digestion in the mouth."
+},
+
+
+{
+scenario: "🥚 SCENARIO 3 – FOOD ENTERS THE STOMACH",
+
+question:
+"Rahul eats an egg. Which nutrient in the egg mainly needs digestion by an enzyme in the stomach?",
+
+options: [
+"Protein",
+"Fat",
+"Vitamin",
+"Water"
+],
+
+answer: 0,
+
+explanation:
+"Egg contains protein. Protein digestion begins in the stomach with the help of pepsin."
+},
+
+
+{
+scenario: "🧪 SCENARIO 4 – THE ACIDIC STOMACH",
+
+question:
+"Pepsin works in an acidic environment. Which substance provides this acidic condition?",
+
+options: [
+"Bile",
+"HCl",
+"Lipase",
+"Saliva"
+],
+
+answer: 1,
+
+explanation:
+"Hydrochloric acid (HCl) provides the acidic medium required for pepsin activity. HCl is not an enzyme."
+},
+
+
+{
+scenario: "🥜 SCENARIO 5 – OILY FOOD",
+
+question:
+"Large fat droplets reach the small intestine. What helps break them into tiny droplets?",
+
+options: [
+"Pepsin",
+"Bile",
+"Trypsin",
+"Salivary amylase"
+],
+
+answer: 1,
+
+explanation:
+"Bile emulsifies large fat globules into tiny droplets. Bile is not an enzyme."
+},
+
+
+{
+scenario: "🧑‍🔬 SCENARIO 6 – PANCREAS TO THE RESCUE",
+
+question:
+"Which pancreatic enzyme helps digest fats in the small intestine?",
+
+options: [
+"Pepsin",
+"Lipase",
+"HCl",
+"Salivary amylase"
+],
+
+answer: 1,
+
+explanation:
+"Lipase digests fats into fatty acids and glycerol."
+},
+
+
+{
+scenario: "🍚 SCENARIO 7 – RICE IN THE SMALL INTESTINE",
+
+question:
+"Which pancreatic enzyme continues the digestion of starch in the small intestine?",
+
+options: [
+"Pancreatic amylase",
+"Pepsin",
+"Lipase",
+"HCl"
+],
+
+answer: 0,
+
+explanation:
+"Pancreatic amylase continues carbohydrate digestion in the small intestine."
+},
+
+
+{
+scenario: "🥩 SCENARIO 8 – PROTEIN IN THE SMALL INTESTINE",
+
+question:
+"Which pancreatic enzyme helps digest proteins in the small intestine?",
+
+options: [
+"Lipase",
+"Trypsin",
+"Amylase",
+"Bile"
+],
+
+answer: 1,
+
+explanation:
+"Trypsin is a pancreatic enzyme that helps digest proteins in the small intestine."
+},
+
+
+{
+scenario: "🧠 SCENARIO 9 – FINAL PRODUCTS",
+
+question:
+"Fat digestion finally produces which substances?",
+
+options: [
+"Glucose",
+"Amino acids",
+"Fatty acids and glycerol",
+"Maltose"
+],
+
+answer: 2,
+
+explanation:
+"Fats are finally digested into fatty acids and glycerol."
+},
+
+
+{
+scenario: "🏆 SCENARIO 10 – THE TRICK QUESTION",
+
+question:
+"Which statement is CORRECT?",
+
+options: [
+"Bile is a digestive enzyme",
+"Pepsin digests fats",
+"Lipase digests fats",
+"HCl digests proteins"
+],
+
+answer: 2,
+
+explanation:
+"Lipase is the enzyme that digests fats. Bile helps by emulsifying fats but is not an enzyme."
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let score = 0;
+
+let studentName = "";
+
+document.getElementById("total").textContent =
+questions.length;
+
+
+/* =====================================================
+   START ACTIVITY
+===================================================== */
+
+function startActivity() {
+
+studentName =
+document.getElementById("studentName").value.trim();
+
+if(studentName === "") {
+
+alert("Please enter the student's name.");
+
+return;
+
+}
+
+document.querySelector(".name-box").style.display =
+"none";
+
+document.getElementById("quizCard").style.display =
+"block";
+
+renderQuestion();
+
+}
+
+
+/* =====================================================
+   SHOW QUESTION
+===================================================== */
+
+function renderQuestion() {
+
+const q = questions[currentQuestion];
+
+document.getElementById("bar").style.width =
+(currentQuestion / questions.length * 100) + "%";
+
+
+document.getElementById("quiz").innerHTML = `
+
+<div class="scenario">
+
+<h2>${q.scenario}</h2>
+
+<div class="question">
+
+${q.question}
+
+</div>
+
+</div>
+
+
+<div class="options">
+
+${q.options.map((option, i) => `
+
+<button
+class="option"
+onclick="checkAnswer(${i})">
+
+${String.fromCharCode(65+i)}.
+${option}
+
+</button>
+
+`).join("")}
+
+</div>
+
+
+<div
+id="feedback"
+class="feedback">
+</div>
+
+
+<button
+id="nextButton"
+class="next-btn"
+onclick="nextQuestion()">
+
+${currentQuestion === questions.length - 1
+? "🏆 SEE MY RESULT"
+: "NEXT SCENARIO →"}
+
+</button>
+
+<p>
+💡 Think → Discuss → Respond
+</p>
+
+`;
+
+}
+
+
+/* =====================================================
+   CHECK ANSWER
+===================================================== */
+
+function checkAnswer(selected) {
+
+const q = questions[currentQuestion];
+
+const buttons =
+document.querySelectorAll(".option");
+
+buttons.forEach(button => {
+
+button.disabled = true;
+
+});
+
+
+const feedback =
+document.getElementById("feedback");
+
+
+if(selected === q.answer) {
+
+buttons[selected].classList.add("correct");
+
+score++;
+
+document.getElementById("score").textContent =
+score;
+
+feedback.className =
+"feedback good";
+
+feedback.innerHTML = `
+
+✅ CORRECT!
+
+<div class="explanation">
+
+${q.explanation}
+
+</div>
+
+`;
+
+}
+
+else {
+
+buttons[selected].classList.add("wrong");
+
+buttons[q.answer].classList.add("correct");
+
+feedback.className =
+"feedback bad";
+
+feedback.innerHTML = `
+
+❌ NOT QUITE!
+
+Correct answer:
+
+<strong>
+${q.options[q.answer]}
+</strong>
+
+<div class="explanation">
+
+${q.explanation}
+
+</div>
+
+`;
+
+}
+
+
+document.getElementById("nextButton").style.display =
+"block";
+
+
+document.getElementById("bar").style.width =
+((currentQuestion + 1) / questions.length * 100) + "%";
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion() {
+
+currentQuestion++;
+
+if(currentQuestion < questions.length) {
+
+renderQuestion();
+
+}
+
+else {
+
+showResult();
+
+}
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult() {
+
+let message = "";
+
+if(score >= 9) {
+
+message =
+"🌟 Outstanding! You are a Digestive Enzyme Expert!";
+
+}
+
+else if(score >= 7) {
+
+message =
+"👏 Excellent! You understand the digestive enzymes very well.";
+
+}
+
+else if(score >= 5) {
+
+message =
+"👍 Good work! Review the Memory Map and practise once more.";
+
+}
+
+else {
+
+message =
+"💪 Keep learning! Review the enzyme functions and try again.";
+
+}
+
+
+document.getElementById("quiz").innerHTML = `
+
+<div class="result">
+
+<div class="result-icon">
+🏆
+</div>
+
+<h2>
+ACTIVITY COMPLETED
+</h2>
+
+<div class="certificate">
+
+<h2>ZPHS RAVUTLA</h2>
+
+<p>
+<strong>Class 10 SCERT Biology</strong>
+</p>
+
+<p>
+This is to acknowledge that
+</p>
+
+<h2>
+${studentName}
+</h2>
+
+<p>
+completed the
+</p>
+
+<h3>
+Human Digestive System – Digestive Enzyme Challenge
+</h3>
+
+<h1>
+${score} / ${questions.length}
+</h1>
+
+<p>
+<strong>${message}</strong>
+</p>
+
+</div>
+
+
+<button
+class="restart-btn"
+onclick="restartActivity()">
+
+🔄 TRY AGAIN
+
+</button>
+
+</div>
+
+`;
+
+}
+
+
+/* =====================================================
+   RESTART
+===================================================== */
+
+function restartActivity() {
+
+currentQuestion = 0;
+
+score = 0;
+
+document.getElementById("score").textContent =
+"0";
+
+document.getElementById("quizCard").style.display =
+"none";
+
+document.querySelector(".name-box").style.display =
+"block";
+
+document.getElementById("studentName").value =
+"";
+
+document.getElementById("bar").style.width =
+"0%";
+
+}
+
+</script>
+
+</body>
+</html>
